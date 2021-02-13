@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Witaj {{username}}</h2>
+<br><br>
+<h3>Produkty w naszym sklepie:</h3>
+{% for product in products %}
+<strong>Produkt:</strong> {{ product.name }} <br>
+<strong>Ilość:</strong> {{ product.amount }} <strong>sztuk</strong> <br>
+<strong>Cena za sztukę:</strong> {{ product.price }} <strong>zł</strong><br>
+<br>
+{% endfor %}
+<h3>Dodaj do koszyka:</h3>
+<form action="" method="post">
+  <input
+    type="text"
+    placeholder="Nazwa produktu"
+    name="name"
+    value="{{
+          request.form.name }}"
+  />
+      <input
+    type="number"
+    placeholder="Ilość"
+    name="number"
+    value="{{
+          request.form.number }}"
+  />
+  <input class="btn btn-success" type="submit" value="Dodaj" /><br>
+</form>
+<br /><br />
+<p>Kliknij <a href="/user">tutaj</a> żeby przejść do koszyka.</p>
+<br><br>
+<p>Kliknij <a href="/offer">tutaj</a> żeby przejść do swoich ofert.</p>
+{% endblock %}

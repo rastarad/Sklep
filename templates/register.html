@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Zarejestruj się</h1>
+<br />
+<form action="" method="post">
+  <input
+    type="text"
+    placeholder="Nazwa"
+    name="username"
+    value="{{
+          request.form.username }}"
+  />
+  <input
+    type="password"
+    placeholder="Hasło"
+    name="password"
+    value="{{
+          request.form.password }}"
+  />
+  <br /><br />
+  <input class="btn btn-default" type="submit" value="Wyślij" />
+</form>
+
+      <br>
+      <h2>Masz już konto?</h2>
+      <p>Kliknij <a href="/logout">tutaj</a> żeby się zalogować.</p>
+
+{% endblock %}

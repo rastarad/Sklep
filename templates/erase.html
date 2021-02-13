@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Panel użytkowników</h2>
+<br /><br />
+<p>Kliknij <a href="/admin">tutaj</a> żeby wrócić.</p>
+<br><br>
+<h3>Użytkownicy:</h3>
+{% for user in users %}
+  <strong>ID:</strong> {{ user.user_id }} <br>
+  <strong>Login:</strong> {{ user.login }} <br>
+<br>
+{% endfor %}
+ <strong>Aby usunąć użytkownika wpisz jego id i potwierdź:</strong><br>
+<form action="" method="post">
+  <input
+    type="id"
+    placeholder="id"
+    name="id"
+    value="{{
+          request.form.id }}"
+  />
+<input class="btn btn-danger btn-sm" type="submit" value="Usuń użytkownika"/><br>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Witaj {{username}}</h2>
+<br /><br />
+<p>Kliknij <a href="/logout">tutaj</a> żeby się wylogować.</p>
+<br>
+<p>Kliknij <a href="/change">tutaj</a> żeby zmienić hasło.</p>
+<br><br>
+<h3>Twój koszyk:</h3>
+{% for product in cart %}
+<strong>Produkt:</strong> {{ product.name }} <br>
+<strong>Ilość:</strong> {{ product.amount }} <strong>sztuk</strong><br>
+<strong>Cena za sztukę:</strong> {{ product.price }} <strong>zł</strong><br>
+<br>
+{% endfor %}
+<h3>Usuń z koszyka:</h3>
+<form action="" method="post">
+  <input
+    type="text"
+    placeholder="produkt"
+    name="product"
+    value="{{
+          request.form.product }}"
+  />
+  <input class="btn btn-danger" type="submit" value="Usuń produkty" /><br>
+    </form>
+<br>
+<p>Kliknij <a href="/shop">tutaj</a> żeby przejść do sklepu.</p>
+<br>
+<p>Kliknij <a href="/offer">tutaj</a> żeby przejść do swoich ofert.</p>
+{% endblock %}

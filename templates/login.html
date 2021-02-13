@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Logowanie</h1>
+<br />
+<form action="" method="post">
+  <input
+    type="text"
+    placeholder="Nazwa"
+    name="username"
+    value="{{
+          request.form.username }}"
+  />
+  <input
+    type="password"
+    placeholder="Hasło"
+    name="password"
+    value="{{
+          request.form.password }}"
+  />
+  <br /><br />
+  <input class="btn btn-default" type="submit" value="Zaloguj się" />
+</form>
+      <br>
+      <h2>Nie masz konta?</h2>
+      <p>Kliknij <a href="/register">tutaj</a> żeby założyć konto.</p>
+{% endblock %}

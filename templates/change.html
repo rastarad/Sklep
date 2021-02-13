@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Zmiana Hasła</h1>
+<br />
+<form action="" method="post">
+  <input
+    type="password"
+    placeholder="Stare hasło"
+    name="old"
+    value="{{
+          request.form.old }}"
+  />
+  <input
+    type="password"
+    placeholder="Nowe hasło"
+    name="new"
+    value="{{
+          request.form.new }}"
+  />
+  <br /><br />
+  <input class="btn btn-default" type="submit" value="Zmień hasło" />
+</form>
+      <br>
+      <p>Kliknij <a href="/user">tutaj</a> żeby wrócić.</p>
+{% endblock %}
